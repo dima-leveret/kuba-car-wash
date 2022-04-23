@@ -1,0 +1,24 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    border: 1px dashed;
+}
+
+.navBar {
+    max-width: 500px;
+    width: 100%;
+
+}
+
+.nav {
+    display: flex; 
+    justify-content: space-around;
+    width: 100%;
+}
+
+.nav a {
+    border: 1px dashed;
+}
