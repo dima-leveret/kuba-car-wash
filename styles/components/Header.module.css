@@ -7,6 +7,10 @@
     border: 1px dashed;
 }
 
+.logo {
+    display: flex;
+}
+
 .navBar {
     max-width: 500px;
     width: 100%;
@@ -21,4 +25,14 @@
 
 .nav a {
     border: 1px dashed;
+}
+
+.menu {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .navBar {
+        display: none;
+    }
 }

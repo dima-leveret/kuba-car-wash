@@ -1,15 +1,21 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import styles from "../styles/components/Header.module.css"
 
-const Header = () => {
+const Header = ({ closeMenu }) => {
   return (
     <header className={styles.header} >
-      <Link href="/">
-        <a>
-          <h2>Kuba | Myjnia samochodów</h2>
+      <Link href="/" >
+        <a className={styles.logo} onClick={closeMenu} >
+          <Image 
+            src="/car-wash-logo.jpg" 
+            width={200}
+            height={200}
+          />
         </a>
       </Link>
+
       <div className={styles.navBar} >
         <nav className={styles.nav}>
           <Link href="/" >
@@ -17,7 +23,7 @@ const Header = () => {
           </Link>
 
           <Link href="/gallery" >
-            <a>Gelaria mytych samochodów</a>
+            <a>Geleria</a>
           </Link>
 
           <Link href="/about-us" >
@@ -29,6 +35,11 @@ const Header = () => {
           </Link>
         </nav>
       </div>
+
+      {/* <div className={styles.menu} > 
+        <button>Rozwiń</button>
+      </div> */}
+
     </header>
   );
 };
