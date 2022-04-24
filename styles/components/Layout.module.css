@@ -42,7 +42,7 @@
 
     .navBar {
         display: flex;
-        position: absolute;
+        position: fixed;
         bottom: -100%;
         left: 0;
         transition: 0.5s;
@@ -51,12 +51,12 @@
 
     .navBarActive {
         display: flex;
-        position: absolute;
+        justify-content: flex-end;
+        position: fixed;
         bottom: 0;
         left: 0;
         transition: 0.5s;
         width: 80%;
-        /* height: auto; */
         background-color: lightblue;
     }
 
