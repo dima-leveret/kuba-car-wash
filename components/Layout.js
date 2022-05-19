@@ -2,30 +2,30 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 import Link from "next/link";
-import { useState } from "react";
+// import { useState } from "react";
 
 import styles from "../styles/components/Layout.module.css";
 
 const Layout = ({ children }) => {
-  const [menu, setMenu] = useState(false);
+  // const [menu, setMenu] = useState(false);
 
-  const showMenu = () => {
-    setMenu(!menu);
-  };
+  // const showMenu = () => {
+  //   setMenu(!menu);
+  // };
 
-  const closeMenu = () => {
-    setMenu(false);
-  }
+  // const closeMenu = () => {
+  //   setMenu(false);
+  // }
 
   return (
     <div className={styles.contentContainer}>
       <div className={styles.content}>
-        <Header closeMenu={closeMenu} />
+        <Header />
         <main className={styles.main}>{children}</main>
         <Footer />
       </div>
 
-      <div className={styles.menu} onClick={showMenu}>
+      {/* <div className={styles.menu} onClick={showMenu}>
         {menu ? <button>close</button> : <button>open</button>}
       </div>
 
@@ -47,7 +47,7 @@ const Layout = ({ children }) => {
               <a>Kontakt</a>
             </Link>
           </nav>
-        </div>
+        </div> */}
     </div>
   );
 };

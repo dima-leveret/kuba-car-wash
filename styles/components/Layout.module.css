@@ -33,7 +33,6 @@
     .menu {
         display: flex;
         position: fixed;
-        bottom: 0;
         right: 0;
         margin: 50px 5px;
         width: 50px;
@@ -57,7 +56,6 @@
         left: 0;
         transition: 0.5s;
         width: 80%;
-        background-color: lightblue;
     }
 
     .nav {

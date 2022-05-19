@@ -1,45 +1,56 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
-import styles from "../styles/components/Header.module.css"
+import styles from "../styles/components/Header.module.css";
 
 const Header = ({ closeMenu }) => {
+
+  const [isNavBarCtive, setIsNavBarActive] = useState(false);
+
+  const openNavBar = () => {
+    setIsNavBarActive(!isNavBarCtive)
+  }
+
+  const closeNavBar = () => {
+    setIsNavBarActive(false)
+  }
+
   return (
-    <header className={styles.header} >
-      <Link href="/" >
-        <a className={styles.logo} onClick={closeMenu} >
-          <Image 
-            src="/car-wash-logo.jpg" 
-            width={200}
-            height={200}
-          />
+    <header className={styles.header}>
+      <Link href="/">
+        <a className={styles.logo} onClick={closeNavBar}>
+          <Image src="/car-wash-logo.jpg" width={300} height={300} />
         </a>
       </Link>
 
-      <div className={styles.navBar} >
+      <div className={isNavBarCtive ? styles.navBarActive : styles.navBar} onClick={openNavBar}>
         <nav className={styles.nav}>
-          <Link href="/" >
+          <Link href="/">
             <a>Strona główna</a>
           </Link>
 
-          <Link href="/gallery" >
-            <a>Geleria</a>
+          <Link href="/price-list">
+            <a>Cennik usług</a>
           </Link>
 
-          <Link href="/about-us" >
+          <Link href="/about-us">
             <a>O nas</a>
           </Link>
 
-          <Link href="/contact" >
+          <Link href="/gallery">
+            <a>Geleria</a>
+          </Link>
+
+          <Link href="/contact">
             <a>Kontakt</a>
           </Link>
         </nav>
       </div>
 
-      {/* <div className={styles.menu} > 
+      <div onClick={openNavBar} className={styles.menu} > 
         <button>Rozwiń</button>
-      </div> */}
-
+      </div>
     </header>
   );
 };
