@@ -24,7 +24,7 @@ const Header = ({ closeMenu }) => {
         </a>
       </Link>
 
-      <div className={isNavBarCtive ? styles.navBarActive : styles.navBar} onClick={openNavBar}>
+      <div className={isNavBarCtive ? styles.navBarActive : styles.navBar} onClick={closeNavBar}>
         <nav className={styles.nav}>
           <Link href="/">
             <a>Strona główna</a>
