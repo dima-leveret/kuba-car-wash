@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import styles from "../styles/components/Header.module.css";
 
-const Header = ({ closeMenu }) => {
+const Header = () => {
 
   const [isNavBarCtive, setIsNavBarActive] = useState(false);
 
@@ -48,8 +48,8 @@ const Header = ({ closeMenu }) => {
         </nav>
       </div>
 
-      <div onClick={openNavBar} className={styles.menu} > 
-        <button>Rozwiń</button>
+      <div onClick={openNavBar} className={styles.menu} >
+        { isNavBarCtive ?  <button>Zwiń</button> : <button>Rozwiń</button>}
       </div>
     </header>
   );
