@@ -7,6 +7,10 @@ body {
     height: 100%;
 }
 
+body._lock {
+  overflow: hidden;
+}
+
 * {
   box-sizing: border-box;
 }

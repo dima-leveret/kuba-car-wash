@@ -1,20 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import styles from "../styles/components/Header.module.css";
 
 const Header = () => {
 
   const [isNavBarCtive, setIsNavBarActive] = useState(false);
+  const [body, setBody] = useState();
 
   const openNavBar = () => {
-    setIsNavBarActive(!isNavBarCtive)
+    setIsNavBarActive(!isNavBarCtive);
+    body.classList.toggle('_lock')
   }
 
   const closeNavBar = () => {
-    setIsNavBarActive(false)
+    setIsNavBarActive(false);
+    body.classList.remove('_lock')
   }
+
+  useEffect(() => {
+    const body = document.body;
+    setBody(body)
+  }, [])
 
   return (
     <header className={styles.header}>
@@ -48,8 +56,8 @@ const Header = () => {
         </nav>
       </div>
 
-      <div onClick={openNavBar} className={styles.menu} >
-        { isNavBarCtive ?  <button>Zwiń</button> : <button>Rozwiń</button>}
+      <div onClick={openNavBar} className={isNavBarCtive ? styles.menuIconActive : styles.menuIcon} >
+        <span></span>
       </div>
     </header>
   );
