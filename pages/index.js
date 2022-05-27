@@ -1,4 +1,4 @@
-import Headcomponent from "../components/HeadComponent"
+import Headcomponent from "../components/HeadComponent";
 
 export default function Home() {
   return (
@@ -7,5 +7,5 @@ export default function Home() {
       <h4>Witamy w swiecie czystych samochodów</h4>
       <p>Dobry samochód to czysty samochód</p>
     </div>
-  )
+  );
 }
