@@ -1,6 +1,5 @@
 import Headcomponent from "../../components/HeadComponent";
 import { useState } from "react";
-import Image from "next/image";
 
 import { searchAllImages, mapImageResources } from "../../lib/cloudinary";
 
