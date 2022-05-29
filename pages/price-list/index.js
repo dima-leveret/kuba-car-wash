@@ -1,32 +1,8 @@
 import Headcomponent from "../../components/HeadComponent";
-import { useState, useEffect } from "react";
 import { searchPricesImage, mapImageResources } from "../../lib/cloudinary";
 
-export default function PriceList({ images: defaultImages }) {
-  const [images, setImages] = useState(defaultImages);
+export default function PriceList({ images }) {
   console.log('price image => ', images);
-
-  useEffect(() => {
-    async function run() {
-      const results = await fetch('/api/searchPricesImage', {
-        method: "POST",
-        body: JSON.stringify({
-          expression: 'folder="kuba-car-wash-prices"'
-        })
-      }).then(r => r.json());
-  
-      const { resources } = results;
-  
-      const images = mapImageResources(resources);
-  
-      setImages(prev => {
-        return [
-          ...prev,
-          ...images
-        ]
-      });
-    }
-  }, [])
 
   return (
     <div>
